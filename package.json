@@ -1,0 +1,29 @@
+{
+  "name": "rikard-discord-bot",
+  "version": "1.0.0",
+  "description": "RikardDiscordBot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riforik/Rikard-Discord-Bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riforik/Rikard-Discord-Bot/issues"
+  },
+  "homepage": "https://github.com/riforik/Rikard-Discord-Bot#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "ms": "^2.1.1",
+    "mysql": "^2.16.0",
+    "ssh2": "^0.8.2",
+    "superagent": "^4.1.0"
+  }
+}
