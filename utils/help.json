@@ -1,0 +1,78 @@
+{
+  "help": {
+    "name": "help",
+    "command": "return information about commands Rikard has."
+  },
+  "addCommand": {
+    "name": "addCommand",
+    "command": "adds command with content r!addCommand [command] [content]"
+  },
+  "actualized": {
+    "name": "actualized",
+    "command": "provides information on actualized.org"
+  },
+  "addrole": {
+    "name": "addrole",
+    "command": "gives a user a desired role r!addrole @[user] [role name]"
+  },
+  "avatar": {
+    "name": "avatar",
+    "command": "shows you your avatar"
+  },
+  "ban": {
+    "name": "ban",
+    "command": "bans a user from the server r!ban @[user] [reason]"
+  },
+  "botinfo": {
+    "name": "botinfo",
+    "command": "provides info on Rikard"
+  },
+  "cat": {
+    "name": "cat",
+    "command": "make day worse"
+  },
+  "clear": {
+    "name": "clear",
+    "command": "clears chat messages r!clear [number]"
+  },
+  "doggo": {
+    "name": "doggo",
+    "command": "brighten up day"
+  },
+  "kick": {
+    "name": "kick",
+    "command": "kicks user from server r!kick @[user] [reason]"
+  },
+  "memberCount": {
+    "name": "memberCount",
+    "command": "displays server user count r!memberCount"
+  },
+  "nickname": {
+    "name": "nickname",
+    "command": "change nicknames by r!nickname [user] [desired nickname]"
+  },
+  "rank": {
+    "name": "rank",
+    "command": "shows your level depending on the server."
+  },
+  "removerole": {
+    "name": "removerole",
+    "command": "removes role from user r!removerole @[user] [role name]"
+  },
+  "report": {
+    "name": "report",
+    "command": "reports a user r!report @[user] [reason]"
+  },
+  "say": {
+    "name": "say",
+    "command": "have Rikard speak r!say [saing]"
+  },
+  "serverinfo": {
+    "name": "serverinfo",
+    "command": "provide information about the server"
+  },
+  "tempmute": {
+    "name": "tempmute",
+    "command": "temporarily restrict a user from typing r!tempmute @[user] [1s/m/h/d]"
+  }
+}

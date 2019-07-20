@@ -1,0 +1,14 @@
+[{
+  "id": "1",
+  "name": "custom_1",
+  "content": "content",
+  "server_id": "server_id",
+  "details": "user#tag, user_id, date"
+},{
+  "id": "2",
+  "name": "custom_2",
+  "content": "content",
+  "server_id": "server_id",
+  "details": "user#tag, user_id, date"
+}
+]
