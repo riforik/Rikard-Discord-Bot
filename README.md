@@ -12,13 +12,12 @@
 [![Discord](https://img.shields.io/discord/600715508697792551.svg?color=%237289DA&logo=discord&style=flat)](https://discord.gg/RYefkXN)
 [![Invite](https://img.shields.io/badge/Rikard-Invite%20to%20Server.svg?color=%237289DA&logo=discord&style=flat)](https://discordapp.com/oauth2/authorize?client_id=546796439725015050&permissions=2080898167&scope=bot)
 [![GitHub All Releases](https://img.shields.io/github/downloads/riforik/Rikard-Discord-Bot/total.svg)](https://github.com/riforik/Rikard-Discord-Bot/blob/production/)
-[![GitHub](https://img.shields.io/github/license/Rikard-Discord-Bot/Rikard-Discord-Bot.svg)](https://github.com/riforik/Rikard-Discord-Bot/blob/production/LICENSE.md)
-[![GitHub package.json version](https://img.shields.io/github/package-json/v/riforik/Rikard-Discord-Bot.svg)](https://github.com/riforik/Rikard-Discord-Bot/blob/production/package.json)
+[![GitHub](https://img.shields.io/github/license/riforik/Rikard-Discord-Bot.svg)](https://github.com/riforik/Rikard-Discord-Bot/blob/staging/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/riforik/Rikard-Discord-Bot.svg?style=social)](https://github.com/riforik/Rikard-Discord-Bot/stargazers)
 
 [Add Rikard to your server!](https://discordapp.com/oauth2/authorize?client_id=546796439725015050&permissions=2080898167&scope=bot)
 
-> ## v1.5.1 Alpha (07/19/2019)
+> ## v1.0.0 Pre-release (07/20/2019)
 >
 > #### Framework Enhancements:
 >
@@ -40,7 +39,6 @@ Follow these steps to get your own version of the bot up and running.
 - [Installation](#installing)
 - [Configuration file](#connecting-to-your-database)
 - [Basic Usage](#starting-the-bot)
-- [Full Documentation](https://github-tools.github.io/github-release-notes)
 
 ### Prerequisites
 
