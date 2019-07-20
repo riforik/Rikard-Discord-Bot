@@ -17,13 +17,14 @@
 
 [Add Rikard to your server!](https://discordapp.com/oauth2/authorize?client_id=546796439725015050&permissions=2080898167&scope=bot)
 
-> ## v1.0.0 Pre-release (07/20/2019)
+> ## v1.0.0 (07/20/2019)
 >
 > #### Framework Enhancements:
 >
 > - Use levels on all servers where Rikard is
 > - See your rank based on server
 > - Member count, help command improvements
+> - Import database structure with the included db.sql file
 >
 > #### Bug Fixes:
 >
@@ -82,7 +83,7 @@ Do the same for `/token.json`, import your Discord developer bot token
 Your `conn.js` file should link to your hosted servers but you still have no database structure.
 
 1. In `conn.js`, `database: 'your_database_here'` is where you want to enter your mySQL database name
-2. Create tables in your database with [these values](https://github.com/riforik/Rikard-Discord-Bot/tree/production/utils/db.xml), just import the file into your database the structure is set
+2. Create tables in your database with [these values](https://github.com/riforik/Rikard-Discord-Bot/tree/production/utils/db.sql), just import the file into your database the structure is set
 
 The tables should not be able to be filled with data from reports or custom commands
 

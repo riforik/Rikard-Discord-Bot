@@ -10,6 +10,7 @@ const errorsUtil = require("./utils/errors.js");
 let xp = require("./utils/xp.json");
 // const express = require('express');
 // const app = express();
+
 const layout = require('./page/layout.js');
 const port = 3000
 
@@ -19,7 +20,6 @@ const bot = new Discord.Client({
 
 bot.commands = new Discord.Collection();
 
-// var isConnected = false;
 var isCloudCommands = false;
 
 
