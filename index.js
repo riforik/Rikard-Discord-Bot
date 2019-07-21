@@ -8,6 +8,8 @@ const conn = require('./utils/conn.js');
 const mysql = require('mysql');
 const errorsUtil = require("./utils/errors.js");
 let xp = require("./utils/xp.json");
+const ranks = require("./utils/ranks.json");
+const talkedRecently = new Set();
 // const express = require('express');
 // const app = express();
 
@@ -132,11 +134,25 @@ bot.on("message", async message => {
   if (message.author.bot) return; // bot speech gets ignored
   if (message.channel.type === "dm") return; // dm speech also ignored
 
-  // commands refute gaining XP
   if (message.content.includes("r!")) {
     console.log("commands don't gain xp");
   } else {
-    levelTracker(bot, message, message.author); // run the level tracker
+    // let xpcommandfile = bot.commands.get("giveXP");
+
+    if (talkedRecently.has(message.author.id)) {
+      // message.channel.send("Wait 1 minute before getting typing this again. - " + message.author);
+      return;
+    } else {
+      levelTracker(bot, message, message.author); // run the level tracker
+
+      // Adds the user to the set so that they can't talk for a minute
+      talkedRecently.add(message.author.id);
+      setTimeout(() => {
+        // Removes the user from the set after a minute
+        talkedRecently.delete(message.author.id);
+      }, 60000);
+    }
+
   }
 
   // log the message details
@@ -203,11 +219,11 @@ bot.login(tokenfile.token);
 // Level Tracker - helper function
 function levelTracker(bot, msg, author) {
 
-  // RNG xp value
-  let rngXp = Math.floor(Math.random() * 150);
+  // xpcommandfile.run(bot, msg, author, rngXp)
+  let rngXp = Math.floor(Math.random() * 25);
   console.log(">-----=====[ Level Tracker ]=====-----<");
   // console.log("^-----===========================-----^");
-  console.log(xp[author.id]);
+  // console.log(xp[author.id]);
 
   // if author has no ID
   if (!xp[author.id]) {
@@ -215,33 +231,38 @@ function levelTracker(bot, msg, author) {
     console.log("no author");
     xp[author.id] = {};
     xp[author.id][msg.guild.id] = {
-        xp: 1,
-        level: 1,
-        msgCount: 1,
-        serverID: msg.guild.id
+      xp: 0,
+      level: 0,
+      msgCount: 0,
+      serverID: msg.guild.id
     };
 
   } else if (!isInGuild(xp[author.id], msg.guild.id)) {
     // author found but not in this server
     console.log("new server");
     xp[author.id][msg.guild.id] = {
-        xp: 0,
-        level: 1,
-        msgCount: 0,
-        serverID: msg.guild.id
+      xp: 0,
+      level: 0,
+      msgCount: 0,
+      serverID: msg.guild.id
     };
   }
 
   console.log(`Author: ${author.username}\nMSG: ${msg}\nLevel: ${xp[author.id].level}\nMsg Count: ${xp[author.id].msgCount}\nCurrent XP: ${xp[author.id].xp}\nRNG XP: ${rngXp}`);
 
-  function isInGuild(array, id){
+  function isInGuild(array, id) {
     if (!array[id]) {
       return false;
     }
+    console.log("----------------------");
+    console.log(array[id].serverID);
+    // console.log(array.serverID);
+    // console.log(`XP: ${array.xp}`);
+    console.log("----------------------");
     if (array[id].serverID === `${id}`) {
       return true; // Found
     } else {
-        return false; // Not found
+      return false; // Not found
     }
   };
   // current xp
@@ -249,14 +270,21 @@ function levelTracker(bot, msg, author) {
   // current level
   let curLvl = xp[author.id][msg.guild.id].level;
   // increasing multiplication each level
-  let advLvl = xp[author.id][msg.guild.id].level * 500;
+  let advLvl = 5 * (curLvl ^ 2) + 50 * curLvl + 100;
+  // nxtLvl
+  let nxtLvl = ranks[curLvl + 1].Total_XP;
   console.log(advLvl);
   xp[author.id][msg.guild.id].xp = curXp + rngXp;
 
   xp[author.id][msg.guild.id].msgCount++;
 
   // level up if current xp is past level expectancy
-  if (advLvl <= xp[author.id][msg.guild.id].xp) {
+  // 101675 + (5 * ((36 - 1) ^ 2) + 50 * (36 - 1) + 100)
+  // current xp + advLvl
+  // prevLvl
+  console.log(ranks[curLvl + 1].XP);
+
+  if (nxtLvl <= xp[author.id][msg.guild.id].xp) {
     xp[author.id][msg.guild.id].level = curLvl + 1; // up one level
     msg.reply(`You are now level ${xp[author.id][msg.guild.id].level}`);
   }
@@ -269,6 +297,7 @@ function levelTracker(bot, msg, author) {
     }
   });
 
+  // console.log(xp[author.id]);
 }; // end of levelTracker();
 
 function exitHandler(options, exitCode) {

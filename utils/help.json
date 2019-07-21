@@ -1,7 +1,7 @@
 {
   "help": {
     "name": "help",
-    "command": "return information about commands Rikard has."
+    "command": "return information about commands Rikard has"
   },
   "addCommand": {
     "name": "addCommand",
@@ -14,6 +14,10 @@
   "addrole": {
     "name": "addrole",
     "command": "gives a user a desired role r!addrole @[user] [role name]"
+  },
+  "addXp": {
+    "name": "addXp",
+    "command": "gives XP to a user r!addXp @[user] [XP]"
   },
   "avatar": {
     "name": "avatar",
@@ -35,6 +39,10 @@
     "name": "clear",
     "command": "clears chat messages r!clear [number]"
   },
+  "createRole": {
+    "name": "createRole",
+    "command": "creates a role by specifying name, colour and perms. r!createRole [name] [hexidecimal number] [permission number]"
+  },
   "doggo": {
     "name": "doggo",
     "command": "brighten up day"
@@ -51,9 +59,13 @@
     "name": "nickname",
     "command": "change nicknames by r!nickname [user] [desired nickname]"
   },
+  "play": {
+    "name": "play",
+    "command": "play music r!play [youtube.url]"
+  },
   "rank": {
     "name": "rank",
-    "command": "shows your level depending on the server."
+    "command": "shows your level depending on the server"
   },
   "removerole": {
     "name": "removerole",
@@ -63,6 +75,10 @@
     "name": "report",
     "command": "reports a user r!report @[user] [reason]"
   },
+  "resetRank": {
+    "name": "resetRank",
+    "command": "resets a users XP, level and message count r!resetRank @[user]"
+  },
   "say": {
     "name": "say",
     "command": "have Rikard speak r!say [saing]"
@@ -70,6 +86,14 @@
   "serverinfo": {
     "name": "serverinfo",
     "command": "provide information about the server"
+  },
+  "setRank": {
+    "name": "setRank",
+    "command": "sets rank with 3 numers r!setRank @[user] [XP] [Lvl] [Message Count]"
+  },
+  "takeXp": {
+    "name": "takeXp",
+    "command": "subtracts XP from a user r!takeXp @[user] [XP]"
   },
   "tempmute": {
     "name": "tempmute",

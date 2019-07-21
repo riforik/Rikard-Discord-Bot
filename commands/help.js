@@ -23,11 +23,14 @@ module.exports.run = async (bot, message, args) => {
     .addField(`${config.prefix}${helpFile.kick.name}`, `${helpFile.kick.command}`)
     .addField(`${config.prefix}${helpFile.memberCount.name}`, `${helpFile.memberCount.command}`)
     .addField(`${config.prefix}${helpFile.nickname.name}`, `${helpFile.nickname.command}`)
+    .addField(`${config.prefix}${helpFile.play.name}`, `${helpFile.play.command}`)
     .addField(`${config.prefix}${helpFile.rank.name}`, `${helpFile.rank.command}`)
     .addField(`${config.prefix}${helpFile.removerole.name}`, `${helpFile.removerole.command}`)
     .addField(`${config.prefix}${helpFile.report.name}`, `${helpFile.report.command}`)
+    .addField(`${config.prefix}${helpFile.resetRank.name}`, `${helpFile.resetRank.command}`)
     .addField(`${config.prefix}${helpFile.say.name}`, `${helpFile.say.command}`)
     .addField(`${config.prefix}${helpFile.serverinfo.name}`, `${helpFile.serverinfo.command}`)
+    .addField(`${config.prefix}${helpFile.setRank.name}`, `${helpFile.setRank.command}`)
     .addField(`${config.prefix}${helpFile.tempmute.name}`, `${helpFile.tempmute.command}`)
 
   let logchannel = message.guild.channels.find(ch => ch.name === 'logs');

@@ -5,7 +5,7 @@ let helpFile = require("../utils/help.json");
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
-
+  //!addrole @andrew Dog Person
   if (!message.member.hasPermission("MANAGE_ROLES")) return errors.noPerms(message, "MANAGE_ROLES");
   if (args[0] == "help") {
     message.reply(`${helpFile.addrole.name} ${helpFile.addrole.command}`);
