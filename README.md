@@ -17,19 +17,20 @@
 
 [Add Rikard to your server!](https://discordapp.com/oauth2/authorize?client_id=546796439725015050&permissions=2080898167&scope=bot)
 
-> ## v1.0.0 (07/20/2019)
+> ## v1.1.0 (07/21/2019)
 >
 > #### Framework Enhancements:
 >
-> - Use levels on all servers where Rikard is
-> - See your rank based on server
-> - Member count, help command improvements
-> - Import database structure with the included db.sql file
+> - Levels now accurately follow mee6 calculation with ranks.json having all the level data up to 100
+> - Levels are delayed based on a minute timer
+> - Add or remove XP from a user with new commands
+> - Reset or set the rank of a user with new commands
+> - Create a role through chat with the default permission being a discord standard for normal users
 >
 > #### Bug Fixes:
 >
-> - Levels resetting each time a message is sent on any server
-> - Member count not showing the bots correctly (displaying 0)
+> - Levels showing improper XP amount until next rank
+> - XP not adding at correct rates
 
 
 ## Getting Started
