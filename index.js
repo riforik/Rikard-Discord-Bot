@@ -181,7 +181,7 @@ bot.on("message", async message => {
   let currentCloudCommand = cloudCommandMatch(cloudCommands, cmd);
 
   // grab needed file
-  let commandfile = bot.commands.get(cmd.slice(prefix.length));
+  let commandfile = bot.commands.get(cmd.slice(prf.length));
 
   // Run /commands/ file or if command is dynamic use it that way
   if (commandfile) {
