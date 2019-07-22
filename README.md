@@ -17,20 +17,22 @@
 
 [Add Rikard to your server!](https://discordapp.com/oauth2/authorize?client_id=546796439725015050&permissions=2080898167&scope=bot)
 
-> ## v1.1.0 (07/21/2019)
+> ## v1.1.1 (07/21/2019)
 >
 > #### Framework Enhancements:
 >
-> - Levels now accurately follow mee6 calculation with ranks.json having all the level data up to 100
+> - Small patch to fix issue relating to commands prefix
+> - Levels now accurately follow mee6 calculation with [ranks.json](./utils/ranks.json) having all the level data up to 100
 > - Levels are delayed based on a minute timer
-> - Add or remove XP from a user with new commands
-> - Reset or set the rank of a user with new commands
+> - **Add or remove** XP from a user with new commands
+> - **Reset or set** the rank of a user with new commands
 > - Create a role through chat with the default permission being a discord standard for normal users
 >
 > #### Bug Fixes:
 >
 > - Levels showing improper XP amount until next rank
 > - XP not adding at correct rates
+
 
 
 ## Getting Started
@@ -70,7 +72,7 @@ because of the package.json
 
 After installing find `/utils/conn.js` and add your live server credentials
 
-Do the same for `/token.json`, import your Discord developer bot token
+Do the same for `/token.json`, import your [Discord developer](https://discordapp.com/developers/applications/) bot token
 
 
 #### These packages come from:
