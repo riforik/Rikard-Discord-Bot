@@ -221,6 +221,10 @@ function levelTracker(bot, msg, author) {
 
   // xpcommandfile.run(bot, msg, author, rngXp)
   let rngXp = Math.floor(Math.random() * 25);
+
+  if (rngXp < 15) {
+    rngXp = 20;
+  }
   console.log(">-----=====[ Level Tracker ]=====-----<");
   // console.log("^-----===========================-----^");
   // console.log(xp[author.id]);

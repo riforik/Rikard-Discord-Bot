@@ -5,5 +5,9 @@
   "limegreen": "#15F153",
   "green": "#47AB6C",
   "blue": "#5997FF",
-  "purple": "#A745ED"
+  "coolblue": "#26B2FF",
+  "purple": "#A745ED",
+  "rankPercent": 10,
+  "rankHasPerc": "⸽⸽",
+  "rankNeedsPerc": "⠀"
 }

@@ -51,6 +51,10 @@
     "name": "kick",
     "command": "kicks user from server r!kick @[user] [reason]"
   },
+  "math": {
+    "name": "math",
+    "command": "solve an equation, or use r!math p [number] [number] for percentage"
+  },
   "memberCount": {
     "name": "memberCount",
     "command": "displays server user count r!memberCount"
@@ -65,7 +69,7 @@
   },
   "rank": {
     "name": "rank",
-    "command": "shows your level depending on the server"
+    "command": "shows your level, another users level or level stats. r!rank [@user] or [level].\rBackup your servers ranks with r!rank b"
   },
   "removerole": {
     "name": "removerole",
@@ -79,6 +83,10 @@
     "name": "resetRank",
     "command": "resets a users XP, level and message count r!resetRank @[user]"
   },
+  "restoreRank": {
+    "name": "restoreRank",
+    "command": "restore a users XP, level and message count r!restore @[user] [file]"
+  },
   "say": {
     "name": "say",
     "command": "have Rikard speak r!say [saing]"
@@ -90,6 +98,10 @@
   "setRank": {
     "name": "setRank",
     "command": "sets rank with 3 numers r!setRank @[user] [XP] [Lvl] [Message Count]"
+  },
+  "stop": {
+    "name": "stop",
+    "command": "stop the current playing music."
   },
   "takeXp": {
     "name": "takeXp",

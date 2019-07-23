@@ -9,29 +9,35 @@
 **Rikard Bot** serves as a personal Discord bot that provides custom commands relative to the creators needs. [For support look here...](https://github.com/riforik/Rikard-Discord-Bot/blob/production/README.md#support)
 
 
-[![Discord](https://img.shields.io/discord/600715508697792551.svg?color=%237289DA&logo=discord&style=flat)](https://discord.gg/RYefkXN)
-[![Invite](https://img.shields.io/badge/Rikard-Invite%20to%20Server.svg?color=%237289DA&logo=discord&style=flat)](https://discordapp.com/oauth2/authorize?client_id=546796439725015050&permissions=2080898167&scope=bot)
+[![Discord](https://img.shields.io/discord/600715508697792551.svg?color=%237289DA&logo=discord&logoColor=White&style=flat)](https://discord.gg/RYefkXN)
+[![Invite](https://img.shields.io/badge/Rikard-Invite%20to%20Server.svg?color=%237289DA&logo=discord&logoColor=White&style=flat)](https://discordapp.com/oauth2/authorize?client_id=546796439725015050&permissions=2080898167&scope=bot)
 [![GitHub All Releases](https://img.shields.io/github/downloads/riforik/Rikard-Discord-Bot/total.svg)](https://github.com/riforik/Rikard-Discord-Bot/blob/master/)
 [![GitHub](https://img.shields.io/github/license/riforik/Rikard-Discord-Bot.svg)](https://github.com/riforik/Rikard-Discord-Bot/blob/staging/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/riforik/Rikard-Discord-Bot.svg?style=social)](https://github.com/riforik/Rikard-Discord-Bot/stargazers)
 
 [Add Rikard to your server!](https://discordapp.com/oauth2/authorize?client_id=546796439725015050&permissions=2080898167&scope=bot)
 
-> ## v1.1.1 (07/21/2019)
+### [Full command list](./commands/CommandList.md)
+
+> ## v1.2.0 (07/23/2019)
 >
 > #### Framework Enhancements:
 >
-> - Small patch to fix issue relating to commands prefix
-> - Levels now accurately follow mee6 calculation with [ranks.json](./utils/ranks.json) having all the level data up to 100
-> - Levels are delayed based on a minute timer
-> - **Add or remove** XP from a user with new commands
-> - **Reset or set** the rank of a user with new commands
-> - Create a role through chat with the default permission being a discord standard for normal users
+> - Improved help command functionality and appearance, now separated into command categories
+> - Level cap expanded at [ranksPart.json](./utils/ranksPart.json), having all the level data up to **999**
+> - **Rank command can now backup all server level data**
+> - **Restore with backups** from Rikard's saves to replace a users level, xp and msg count
+> - **Reset All** command makes a backup and resets all ranks in the server
+> - **Restore All** command creates a backup and restores ranks in the server
+> - **Rikard can now solve equations** through chat and calculate **percentages**
+> - Embeds in general now look better when Rikard responds
+> - Rank command shows a progress bar along with percentage
+> - Bot config includes values to change progress bar characters and length from 0-100
+> - Added command list
 >
 > #### Bug Fixes:
->
-> - Levels showing improper XP amount until next rank
-> - XP not adding at correct rates
+> - None :(
+
 
 
 

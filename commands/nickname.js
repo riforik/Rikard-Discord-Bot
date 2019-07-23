@@ -8,6 +8,7 @@ module.exports.run = async (bot, message, args) => {
 
   // check to see if user has permissions
   if (!message.member.hasPermission("CHANGE_NICKNAME")) {
+    console.log("!!N O   P E R M I S S I O N S!!");
     return errors.noPerms(message, "CHANGE_NICKNAME");
   }
 
@@ -21,6 +22,10 @@ module.exports.run = async (bot, message, args) => {
   // get member using command
   let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
 
+  if (rMember.hasPermission("CHANGE_NICKNAME")) {
+    console.log("!!P E R M I S S I O N S!!");
+  }
+
   // if user is not found
   if (!rMember) return errors.cantfindUser(message.channel);
 
@@ -30,11 +35,14 @@ module.exports.run = async (bot, message, args) => {
   // if the argument is empty
   if (!nickname) return message.reply("Specify a nickname!");
 
-  console.log("-------------  S E T   N I C K N A M E  ---------");
+  console.log("------------------  D A T A  -------------------");
   console.log(`rMember: ${rMember}`);
   console.log(`Nickname: ${nickname}`);
   console.log(`Server: ${message.guild}`);
+  console.log("------------------------------------------------\n\n");
 
+
+  console.log("-------------  S E T   N I C K N A M E  ---------");
   rMember.setNickname(`${nickname}`, "No reason.")
     .then(console.log)
     .catch(console.error);

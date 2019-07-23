@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
   if (args[0] == "help") {
     let helpEmbed = new Discord.RichEmbed()
       .setDescription("Create role usage")
-      .setAuthor(name = "Permissions Calculator", url = "https://discordapi.com/permissions.html#0", icon_url = "https://discordapi.com/permissions.html#0")
+      .setAuthor("Permissions Calculator", "https://discordapp.com/assets/f8389ca1a741a115313bede9ac02e2c0.svg", "https://discordapi.com/permissions.html#0")
       .setColor(config.blue)
       .addField("Create Role", helpFile.createRole.command, true)
       .setFooter(`https://discordapi.com/permissions.html#0`);

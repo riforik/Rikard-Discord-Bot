@@ -4,7 +4,7 @@ const ms = require("ms");
 let config = require("../botconfig.json");
 let helpFile = require("../utils/help.json");
 let xp = require("../utils/xp.json");
-const ranks = require("../utils/ranks.json");
+const ranks = require("../utils/ranksPart.json");
 const fs = require("fs");
 
 module.exports.run = async (bot, message, args) => {
@@ -28,8 +28,6 @@ module.exports.run = async (bot, message, args) => {
     return errors.cantfindUser(message.channel); // no user
   } else if (args[1] === " ") {
     return errors.incorrectUsage(message.channel); // bad usage
-  } else if (rUser.id === bot.user.id){
-    return errors.botuser(message);
   } else {
     addXp(rUser.user, gID);
   }
@@ -45,7 +43,33 @@ module.exports.run = async (bot, message, args) => {
         msgCount: 0,
         serverID: gID
       };
+    } else if (!isInGuild(xp[author.id], message.guild.id)) {
+      // author found but not in this server
+      console.log("new server");
+      xp[author.id][message.guild.id] = {
+        xp: 0,
+        level: 0,
+        msgCount: 0,
+        serverID: message.guild.id
+      };
     }
+
+    function isInGuild(array, id) {
+      if (!array[id]) {
+        return false;
+      }
+      console.log("----------------------");
+      console.log(array[id].serverID);
+      // console.log(array.serverID);
+      // console.log(`XP: ${array.xp}`);
+      console.log("----------------------");
+      if (array[id].serverID === `${id}`) {
+        return true; // Found
+      } else {
+        return false; // Not found
+      }
+    };
+
     // change rank to
     let newXP = parseInt(args[1]);
 
@@ -57,20 +81,34 @@ module.exports.run = async (bot, message, args) => {
 
     let nxtLvl = 5 * (curLvl ^ 2) + 50 * curLvl + 100;
     let nxtLvlXP = ranks[curLvl + 1].Total_XP;
+    let nxtLvlXP_xp = ranks[curLvl + 1].XP;
     let lvlDiff = nxtLvlXP - curXP;
+
+    let percVal = Math.floor((100 * (nxtLvlXP_xp - lvlDiff)) / nxtLvlXP_xp);
+    let percValMin = Math.floor((config.rankPercent * (nxtLvlXP_xp - lvlDiff)) / nxtLvlXP_xp);
+    let percArr = [percValMin, config.rankPercent - percValMin];
+    let percCharArr = [config.rankHasPerc, config.rankNeedsPerc];
+    for (var i = 0; i < percArr[0]; i++) {
+      percCharArr[0] += config.rankHasPerc;
+    }
+    for (var i = 0; i < percArr[1]; i++) {
+      percCharArr[1] += config.rankNeedsPerc;
+    }
 
     let uIcon = author.displayAvatarURL;
     let bIcon = bot.user.displayAvatarURL;
     let xpEmbed = new Discord.RichEmbed()
       .setDescription("Add XP")
-      .setAuthor(author.username)
+      .setAuthor("Riforik", "https://i.imgur.com/4BF1DoJ.png", "https://github.com/riforik")
+      .setTitle(author.username)
       .setColor(config.limegreen)
       .setThumbnail(uIcon)
       .addField("Done!", `Gave ${newXP}XP!`, true)
       .addField("Level", curLvl, true)
       .addField("XP", curXP, true)
       .addField("Msg Count", curMsg)
-      .setFooter(`${lvlDiff} until next level`, bIcon);
+      .addField("Progress", `${percVal}%\r _${percCharArr[0]}${percCharArr[1]}⸽_`)
+      .setFooter(`${nxtLvlXP_xp - lvlDiff} out of ${nxtLvlXP_xp}`, bIcon);
 
     message.reply(xpEmbed);
 

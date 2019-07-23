@@ -18,7 +18,8 @@ module.exports.run = async (bot, message, args) => {
   if (bUser.hasPermission("MANAGE_MESSAGES")) return errors.equalPerms(message, bUser, "MANAGE_MESSAGES");
 
   let banEmbed = new Discord.RichEmbed()
-    .setDescription("~Ban~")
+    .setAuthor("Riforik", "https://i.imgur.com/4BF1DoJ.png", "https://github.com/riforik")
+    .setTitle("Ban")
     .setColor(config.red)
     .addField("Banned User", `${bUser} with ID ${bUser.id}`)
     .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)

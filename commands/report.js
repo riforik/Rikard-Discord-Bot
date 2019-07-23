@@ -6,7 +6,7 @@ let config = require("../botconfig.json");
 let helpFile = require("../utils/help.json");
 
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, args, someData) => {
   message.delete();
   if (args[0] == "help") {
     message.reply(`${helpFile.report.name} ${helpFile.report.command}`);
@@ -25,6 +25,7 @@ module.exports.run = async (bot, message, args) => {
     } else {
 
       let reportembed = new Discord.RichEmbed()
+        .setAuthor("Riforik", "https://i.imgur.com/4BF1DoJ.png", "https://github.com/riforik")
         .setColor(config.blue)
         .setTitle(`REPORT`)
         .addField(`Issued By`, `${message.author.tag}`)
