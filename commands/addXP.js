@@ -58,12 +58,7 @@ module.exports.run = async (bot, message, args) => {
       if (!array[id]) {
         return false;
       }
-      console.log("----------------------");
-      console.log(array[id].serverID);
-      // console.log(array.serverID);
-      // console.log(`XP: ${array.xp}`);
-      console.log("----------------------");
-      if (array[id].serverID === `${id}`) {
+
         return true; // Found
       } else {
         return false; // Not found

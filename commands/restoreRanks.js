@@ -24,11 +24,6 @@ module.exports.run = async (bot, message, args) => {
     return restoreAllRanks(gID, args);
   }
 
-  // console.log(rUser.user.username);
-  // console.log(args);
-  // console.log(message.channel.name);
-
-  // if any args are incorrect using ||
   if (!rUser) {
     return errors.cantfindUser(message.channel); // no user
   } else {
@@ -46,8 +41,6 @@ module.exports.run = async (bot, message, args) => {
         backupCommand.run(bot, message, "b", true);
 
         // get all members
-        //r!restoreRank all 600715508697792551_Monday_July_2019.json 600715508697792551
-
         let gSize = message.guild.memberCount;
         let gCount = message.guild.members;
         let bkFile = args[1];
@@ -82,7 +75,6 @@ module.exports.run = async (bot, message, args) => {
             console.log(bkUsrContArr[0][gUsrs[i].user.id]);
             console.log("----------");
 
-            // console.log(`Looped ${i} times ${gUsrs[i].user.id}`);
             if (!xp[gUsrs[i].user.id]) {
               // author not found
               xp[gUsrs[i].user.id] = {};
@@ -109,8 +101,6 @@ module.exports.run = async (bot, message, args) => {
               }
               console.log("----------------------");
               console.log(array[id].serverID);
-              // console.log(array.serverID);
-              // console.log(`XP: ${array.xp}`);
               console.log("----------------------");
               if (array[id].serverID === `${id}`) {
                 return true; // Found
@@ -118,7 +108,6 @@ module.exports.run = async (bot, message, args) => {
                 return false; // Not found
               }
             };
-            // restore rank toconsole.log(bkUsrContArr[0]);
             xp[gUsrs[i].id][gID].xp = bkUsrContArr[i][gUsrs[i].user.id].xp;
             xp[gUsrs[i].id][gID].level = bkUsrContArr[i][gUsrs[i].user.id].level;
             xp[gUsrs[i].id][gID].msgCount = bkUsrContArr[i][gUsrs[i].user.id].msgCount;
@@ -144,7 +133,6 @@ module.exports.run = async (bot, message, args) => {
     let bkFile = args[1];
     let bkUsrCont;
     let bkUsrContArr;
-    // r!restoreRank @rsio#4128 600715508697792551_Monday_July_2019.json
 
     if (bkFile) {
       fs.readFile(`./utils/rankBackups/${bkFile}`, function read(err, data) {
@@ -160,7 +148,6 @@ module.exports.run = async (bot, message, args) => {
 
     function processFile() {
       let aID = author.id;
-      // console.log(bkUsrCont);
       console.log(bkUsrContArr[0][aID]);
 
       console.log(`restoreRank: ${author.username}\nFile Name: ${bkFile}`);

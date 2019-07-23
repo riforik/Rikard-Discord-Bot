@@ -33,7 +33,6 @@ module.exports.run = async (bot, message, args, someData) => {
         .addField(`Reason`, `${rreason}`)
         .addField(`Created At`, `${message.createdAt}`);
 
-      // message.reply(`Connection good. ${message.author.username}`)
       message.reply(reportembed).then(msg => msg.delete(5000));
       isConnected = true;
     }

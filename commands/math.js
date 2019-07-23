@@ -21,7 +21,6 @@ module.exports.run = async (bot, message, args) => {
   console.log(equation);
 
   function doEquation(equation) {
-    // let cutEquation = equation.replace(/['"]+/g, '');
     try {
       let solvedEquation = eval(equation);
       message.reply(`${solvedEquation} is the sum of ${equation}`);

@@ -32,7 +32,6 @@ module.exports.run = async (bot, message, args) => {
   console.log(args);
   console.log(message.channel.name);
 
-  // if any args are incorrect using ||
   if (!rUser) {
     return errors.cantfindUser(message.channel); // no user
   } else if (args[1] === " " || args[2] === " " || args[3] === " ") {

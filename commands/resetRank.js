@@ -81,8 +81,6 @@ module.exports.run = async (bot, message, args) => {
             }
             console.log("----------------------");
             console.log(array[id].serverID);
-            // console.log(array.serverID);
-            // console.log(`XP: ${array.xp}`);
             console.log("----------------------");
             if (array[id].serverID === `${id}`) {
               return true; // Found
@@ -138,8 +136,6 @@ module.exports.run = async (bot, message, args) => {
       }
       console.log("----------------------");
       console.log(array[id].serverID);
-      // console.log(array.serverID);
-      // console.log(`XP: ${array.xp}`);
       console.log("----------------------");
       if (array[id].serverID === `${id}`) {
         return true; // Found
@@ -160,7 +156,7 @@ module.exports.run = async (bot, message, args) => {
     let nxtLvlXP = ranks[curLvl + 1].Total_XP;
     let nxtLvlXP_xp = ranks[curLvl + 1].XP;
     let lvlDiff = nxtLvlXP - curXP;
-    
+
     let percVal = Math.floor((100 * (nxtLvlXP_xp - lvlDiff)) / nxtLvlXP_xp);
     let percValMin = Math.floor((config.rankPercent * (nxtLvlXP_xp - lvlDiff)) / nxtLvlXP_xp);
     let percArr = [percValMin, config.rankPercent - percValMin];

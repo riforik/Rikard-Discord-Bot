@@ -27,9 +27,6 @@ module.exports.run = async (bot, message, args, someData) => {
 
   console.log(`!${newCmdName} ${newCmdCont.join(" ")}`);
   let newCmdCont2 = newCmdCont.join(" ");
-  // if (!rUser) return errors.cantfindUser(message.channel);
-  // let rreason = args.join(" ").slice(22);
-  // if (!rreason) return errors.noReason(message.channel);
 
 
   conn.query(`INSERT INTO customCmds (name, content, server_id, details) VALUES ('${newCmdName}', '${newCmdCont2}', '${message.guild.id}', '${message.author.tag}, ${message.author.id}, ${message.createdAt}')`, function(error, results, fields) {
@@ -46,7 +43,6 @@ module.exports.run = async (bot, message, args, someData) => {
         .addField(`Command`, `!${newCmdName} ${newCmdCont.join(" ")}`)
         .addField(`Created At`, `${message.createdAt}`);
 
-      // message.reply(`Connection good. ${message.author.username}`)
       message.reply(commandembed);
       isConnected = true;
     }

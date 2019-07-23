@@ -67,8 +67,6 @@ module.exports.run = async (bot, message, args, zoolean) => {
       }
       console.log("----------------------");
       console.log(array[id].serverID);
-      // console.log(array.serverID);
-      // console.log(`XP: ${array.xp}`);
       console.log("----------------------");
       if (array[id].serverID === `${id}`) {
         return true; // Found
@@ -186,7 +184,6 @@ module.exports.run = async (bot, message, args, zoolean) => {
           console.log(`Not: ${array[i].user.id}`);
         }
       }
-      // console.log(gMemSID);
       // turn to json export
       exportToJsonFile(gMemSID, gUsrs);
 

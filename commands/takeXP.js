@@ -23,7 +23,6 @@ module.exports.run = async (bot, message, args) => {
   console.log(args);
   console.log(message.channel.name);
 
-  // if any args are incorrect using ||
   if (!rUser) {
     return errors.cantfindUser(message.channel); // no user
   } else if (args[1] === " ") {
@@ -60,8 +59,6 @@ module.exports.run = async (bot, message, args) => {
       }
       console.log("----------------------");
       console.log(array[id].serverID);
-      // console.log(array.serverID);
-      // console.log(`XP: ${array.xp}`);
       console.log("----------------------");
       if (array[id].serverID === `${id}`) {
         return true; // Found
