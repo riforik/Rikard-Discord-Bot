@@ -43,48 +43,76 @@
 
 ### Moderation
 [**r!addCommand**](./addCommand.js) adds command with content r!addCommand [command] [content]
+
 [**r!addrole**](./addrole.js) gives a user a desired role r!addrole @[user] [role name]
+
 [**r!ban**](./ban.js) bans a user from the server r!ban @[user] [reason]
+
 [**r!botinfo**](./botinfo.js) provides info on Rikard
+
 [**r!clear**](./clear.js) clears chat messages r!clear [number]
+
 [**r!createRole**](./createRole.js) creates a role by specifying name, colour and perms. r!createRole [name] [hexidecimal number] [permission number]
+
 [**r!kick**](./kick.js) kicks user from server r!kick @[user] [reason]
+
 [**r!nickname**](./nickname.js) change nicknames by r!nickname [user] [desired nickname]
+
 [**r!purge**](./purge.js) purge chat from a desired amount of messages
+
 [**r!removerole**](./removerole.js) removes role from user r!removerole @[user] [role name]
+
 [**r!report**](./report.js) reports a user r!report @[user] [reason]
+
 [**r!tempmute**](./tempmute.js) temporarily restrict a user from typing r!tempmute @[user] [1s/m/h/d]
+
 
 ---
 ### General
 [**r!actualized**](./actualized.json) provides information on actualized.org
+
 [**r!avatar**](./avatar.json) shows you your avatar
+
 [**r!help**](./help.js) return information about commands Rikard has
+
 [**r!memberCount**](./memberCount.json) displays server user count r!memberCount
+
 [**r!serverinfo**](./serverinfo.json) provide information about the server
+
 
 ---
 ### Music
 [**r!play**](./play.js) play music r!play [youtube.url]
+
 [**r!stop**](./stop.js) stop the current playing music.
+
 
 ---
 ### Fun
 [**r!cat**](./cat.js) make day worse
+
 [**r!doggo**](./doggo.js) brighten up day
+
 
 ---
 ### Math
 [**r!math**](./math.js) solve an equation, or use r!math p [number] [number] for percentage
 
+
 ---
 ### Level System
 [**r!rank**](./rank.js) shows your level, another users level or level stats. r!rank @[user] or [level]. Backup your servers ranks with r!rank b
+
 [**r!resetRank**](./resetRank.js) resets a users XP, level and message count r!resetRank @[user]
+
 [**r!restoreRank**](./restoreRank.js) restore a users XP, level and message count r!restore @[user] [file]
+
 [**r!setRank**](./setRank.js) sets rank with 3 numers r!setRank @[user] [XP] [Lvl] [Message Count]
+
 [**r!addXp**](./addXp.js) gives XP to a user r!addXp @[user] [XP]
+
 [**r!takeXp**](./takeXp.js) subtracts XP from a user r!takeXp @[user] [XP]
+
 
 ---
 
