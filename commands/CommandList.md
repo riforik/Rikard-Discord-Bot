@@ -69,15 +69,15 @@
 
 ---
 ### General
-[**r!actualized**](./actualized.json) provides information on actualized.org
+[**r!actualized**](./actualized.js) provides information on actualized.org
 
-[**r!avatar**](./avatar.json) shows you your avatar
+[**r!avatar**](./avatar.js) shows you your avatar
 
 [**r!help**](./help.js) return information about commands Rikard has
 
-[**r!memberCount**](./memberCount.json) displays server user count r!memberCount
+[**r!memberCount**](./memberCount.js) displays server user count r!memberCount
 
-[**r!serverinfo**](./serverinfo.json) provide information about the server
+[**r!serverinfo**](./serverinfo.js) provide information about the server
 
 
 ---
