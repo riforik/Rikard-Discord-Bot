@@ -9,7 +9,7 @@
 **Rikard Bot** serves as a personal Discord bot that provides custom commands relative to the creators needs. [For support look here...](https://github.com/riforik/Rikard-Discord-Bot/blob/production/README.md#support)
 
 
-[![Discord](https://img.shields.io/discord/600715508697792551.svg?color=%237289DA&logo=discord&logoColor=White&style=flat)](https://discord.gg/DMsYtJc)
+[![Discord](https://img.shields.io/discord/600715508697792551.svg?color=%237289DA&logo=discord&logoColor=White&style=flat)](https://discord.gg/mZzsJfg)
 [![Invite](https://img.shields.io/badge/Rikard-Invite%20to%20Server.svg?color=%237289DA&logo=discord&logoColor=White&style=flat)](https://discordapp.com/oauth2/authorize?client_id=546796439725015050&permissions=2080898167&scope=bot)
 [![GitHub All Releases](https://img.shields.io/github/downloads/riforik/Rikard-Discord-Bot/total.svg)](https://github.com/riforik/Rikard-Discord-Bot/blob/master/)
 [![GitHub](https://img.shields.io/github/license/riforik/Rikard-Discord-Bot.svg)](https://github.com/riforik/Rikard-Discord-Bot/blob/staging/LICENSE)
@@ -153,7 +153,7 @@ In your terminal window you can press [Control + C] on Windows or Mac *(may prom
 
 ## Support
 
-[Discord Support Server](https://discord.gg/DMsYtJc)
+[Discord Support Server](https://discord.gg/mZzsJfg)
 
 This is seriously the best way to contact me, no social media could come close to the efficiency; I will only post this. It is the fastest.
 
