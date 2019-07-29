@@ -24,12 +24,12 @@ module.exports.run = async (bot, message, args) => {
   let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 
 
-  console.log(rUser.user.username);
   console.log(args);
   console.log(message.channel.name);
 
   // if any args are incorrect using ||
   if (!rUser) {
+    console.log("NO USER");
     return errors.cantfindUser(message.channel); // no user
   } else {
     resetRank(rUser.user, gID);
@@ -157,10 +157,10 @@ module.exports.run = async (bot, message, args) => {
     let nxtLvlXP_xp = ranks[curLvl + 1].XP;
     let lvlDiff = nxtLvlXP - curXP;
 
-    let percVal = Math.floor((100 * (nxtLvlXP_xp - lvlDiff)) / nxtLvlXP_xp);
-    let percValMin = Math.floor((config.rankPercent * (nxtLvlXP_xp - lvlDiff)) / nxtLvlXP_xp);
+    let percVal = 0;
+    let percValMin = 0;
     let percArr = [percValMin, config.rankPercent - percValMin];
-    let percCharArr = [config.rankHasPerc, config.rankNeedsPerc];
+    let percCharArr = ["", ""];
     for (var i = 0; i < percArr[0]; i++) {
       percCharArr[0] += config.rankHasPerc;
     }
@@ -179,8 +179,8 @@ module.exports.run = async (bot, message, args) => {
       .addField("Level", curLvl, true)
       .addField("XP", curXP, true)
       .addField("Msg Count", curMsg)
-      .addField("Progress", `${percVal}%\r _${percCharArr[0]}${percCharArr[1]}⸽_`)
-      .setFooter(`${nxtLvlXP_xp - lvlDiff} out of ${nxtLvlXP_xp}`, bIcon);
+      .addField("Progress", `${percVal}%\r _⸽${percCharArr[0]}${percCharArr[1]}⸽_`)
+      .setFooter(`0 out of ${nxtLvlXP_xp}`, bIcon);
 
     message.reply(rankEmb);
 
@@ -190,8 +190,6 @@ module.exports.run = async (bot, message, args) => {
       }
     });
   }
-
-
 }
 
 module.exports.help = {

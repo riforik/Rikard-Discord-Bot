@@ -4,6 +4,7 @@ let config = require("../botconfig.json");
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
+  //!report @ned this is the reason
   let {
     body
   } = await superagent

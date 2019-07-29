@@ -24,6 +24,7 @@ module.exports.run = async (bot, message, args) => {
     return restoreAllRanks(gID, args);
   }
 
+  // if any args are incorrect using ||
   if (!rUser) {
     return errors.cantfindUser(message.channel); // no user
   } else {
@@ -40,7 +41,6 @@ module.exports.run = async (bot, message, args) => {
       if (backupCommand) {
         backupCommand.run(bot, message, "b", true);
 
-        // get all members
         let gSize = message.guild.memberCount;
         let gCount = message.guild.members;
         let bkFile = args[1];
@@ -62,7 +62,6 @@ module.exports.run = async (bot, message, args) => {
 
         function processFile() {
           let aID = message.author.id;
-          // console.log(bkUsrCont);
 
           console.log(`restoreRank: ${message.author.username}\nFile Name: ${bkFile}\nFrom Rank: ${bkUsrContArr[0][gUsrs[0].user.id]}`);
           console.log(bkUsrContArr[0]);
@@ -108,6 +107,7 @@ module.exports.run = async (bot, message, args) => {
                 return false; // Not found
               }
             };
+
             xp[gUsrs[i].id][gID].xp = bkUsrContArr[i][gUsrs[i].user.id].xp;
             xp[gUsrs[i].id][gID].level = bkUsrContArr[i][gUsrs[i].user.id].level;
             xp[gUsrs[i].id][gID].msgCount = bkUsrContArr[i][gUsrs[i].user.id].msgCount;
@@ -118,7 +118,7 @@ module.exports.run = async (bot, message, args) => {
               }
             });
           }
-          //r!setRank @rsio#4128 11825 15 13000
+
           message.reply("I restored all the ranks, and exported a backup for the ability to sleep at night.")
 
         }
@@ -129,7 +129,7 @@ module.exports.run = async (bot, message, args) => {
   }
 
   function restoreRank(author, gID) {
-    // r!restoreRank @mention args[filename]
+
     let bkFile = args[1];
     let bkUsrCont;
     let bkUsrContArr;
@@ -200,7 +200,7 @@ module.exports.run = async (bot, message, args) => {
       let percVal = Math.floor((100 * (nxtLvlXP_xp - lvlDiff)) / nxtLvlXP_xp);
       let percValMin = Math.floor((config.rankPercent * (nxtLvlXP_xp - lvlDiff)) / nxtLvlXP_xp);
       let percArr = [percValMin, config.rankPercent - percValMin];
-      let percCharArr = [config.rankHasPerc, config.rankNeedsPerc];
+      let percCharArr = ["", ""];
       for (var i = 0; i < percArr[0]; i++) {
         percCharArr[0] += config.rankHasPerc;
       }

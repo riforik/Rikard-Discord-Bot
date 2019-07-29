@@ -6,6 +6,10 @@ let helpFile = require("../utils/help.json");
 let xp = require("../utils/xp.json");
 const ranks = require("../utils/ranksPart.json");
 const fs = require("fs");
+const Joi = require('@hapi/joi');
+const schema = Joi.object().keys({
+  xp: Joi.number().integer().min(0)
+});
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
@@ -23,15 +27,30 @@ module.exports.run = async (bot, message, args) => {
   console.log(args);
   console.log(message.channel.name);
 
+  // if any args are incorrect using ||
   if (!rUser) {
     return errors.cantfindUser(message.channel); // no user
   } else if (args[1] === " ") {
     return errors.incorrectUsage(message.channel); // bad usage
   } else {
-    takeXp(rUser.user, gID);
+    // variable in question
+    let userInpXp = parseInt(args[1]);
+
+    schema.validate({
+      xp: userInpXp
+    }, function(err, value) {
+      if (err) {
+        console.log(err);
+        return errors.incorrectUsage(message.channel); // bad usage
+      } else {
+        console.log(value);
+        takeXp(rUser.user, gID, value.xp);
+      }
+    }); // err === null -> valid
+
   }
 
-  function takeXp(author, gID) {
+  function takeXp(author, gID, newXP) {
     console.log(`takeXp: ${author.username}`);
     if (!xp[author.id]) {
       // author not found
@@ -67,8 +86,6 @@ module.exports.run = async (bot, message, args) => {
       }
     };
 
-    // change rank to
-    let newXP = parseInt(args[1]);
 
     xp[author.id][gID].xp = xp[author.id][gID].xp - newXP;
 
@@ -84,7 +101,7 @@ module.exports.run = async (bot, message, args) => {
     let percVal = Math.floor((100 * (nxtLvlXP_xp - lvlDiff)) / nxtLvlXP_xp);
     let percValMin = Math.floor((config.rankPercent * (nxtLvlXP_xp - lvlDiff)) / nxtLvlXP_xp);
     let percArr = [percValMin, config.rankPercent - percValMin];
-    let percCharArr = [config.rankHasPerc, config.rankNeedsPerc];
+    let percCharArr = ["", ""];
     for (var i = 0; i < percArr[0]; i++) {
       percCharArr[0] += config.rankHasPerc;
     }

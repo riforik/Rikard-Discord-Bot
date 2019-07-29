@@ -43,22 +43,23 @@ let lvlSytmCont = `
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
+  if (!message.member.hasPermission("MANAGE_GUILD")) return errors.noPerms(message, "MANAGE_GUILD");
 
   let helpembed = new Discord.RichEmbed()
     .setColor(config.limegreen)
     .setAuthor("Riforik", "https://i.imgur.com/4BF1DoJ.png", "https://github.com/riforik/Rikard-Discord-Bot/blob/master/commands/CommandList.md")
-    .setTitle(":mag: Help")
-    .setDescription("Get help for the tricks Rikard can do")
+    .setTitle(":scroll: Command List")
+    .setDescription("Commands and their code can be found on GitHub by clicking the link on Riforiks name")
     .addField(":scales: Moderation", moderationCont)
     .addField(":performing_arts: General", generalCont)
     .addField(":musical_note: Music", musicCont)
     .addField(":joy: Fun", funCont)
     .addField(":straight_ruler: Math", mathCont)
     .addField(":chart_with_upwards_trend: Level System", lvlSytmCont)
-    .setFooter("https://github.com/riforik/Rikard-Discord-Bot/blob/master/commands/CommandList.md", bot.user.displayAvatarURL);
+    .setFooter("End of commands", bot.user.displayAvatarURL);
 
 
-  let logchannel = message.guild.channels.find(ch => ch.name === 'logs');
+  let logchannel = message.guild.channels.find(ch => ch.name === 'commands');
   if (!logchannel) return message.member.send(helpembed);
 
   message.delete().catch(O_o => {});
@@ -67,5 +68,5 @@ module.exports.run = async (bot, message, args) => {
   // message.channel.send(helpembed);
 }
 module.exports.help = {
-  name: 'help'
+  name: 'commands'
 }

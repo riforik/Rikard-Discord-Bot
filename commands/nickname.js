@@ -7,11 +7,9 @@ module.exports.run = async (bot, message, args) => {
   message.delete();
 
   // check to see if user has permissions
-  if (!message.member.hasPermission("CHANGE_NICKNAME")) {
-    console.log("!!N O   P E R M I S S I O N S!!");
-    return errors.noPerms(message, "CHANGE_NICKNAME");
+  if (!message.member.hasPermission("MANAGE_NICKNAMES")) {
+    return errors.noPerms(message, "MANAGE_NICKNAMES");
   }
-
 
   // If user asks for commands options
   if (args[0] == "help") {
@@ -22,9 +20,6 @@ module.exports.run = async (bot, message, args) => {
   // get member using command
   let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
 
-  if (rMember.hasPermission("CHANGE_NICKNAME")) {
-    console.log("!!P E R M I S S I O N S!!");
-  }
 
   // if user is not found
   if (!rMember) return errors.cantfindUser(message.channel);

@@ -1,0 +1,114 @@
+{
+  "beRespectful": {
+    "name": "Be respectful",
+    "command": "No bashing or heated arguments to other people in the chat."
+  },
+  "contentSharing": {
+    "name": "Content Sharing",
+    "command": "Sending/Linking any harmful material such as viruses, IP grabbers or harmware results in an immediate and permanent ban."
+  },
+  "grammar": {
+    "name": "Grammar",
+    "command": "Use proper grammar and spelling and don't spam."
+  },
+  "profanity": {
+    "name": "Profanity",
+    "command": "4) Usage of excessive extreme innapropriate langauge is prohibited."
+  },
+  "mention": {
+    "name": "Mentioning",
+    "command": "mentioning @everyone, the Moderators or a specific person without proper reason is prohibited."
+  },
+  "voiceChat": {
+    "name": "Voice Chat",
+    "command": "Act civil in Voice Chat."
+  },
+  "chatUsage": {
+    "name": "Chat Usage",
+    "command": "Post content in the correct channels."
+  },
+  "doxing": {
+    "name": "Doxing",
+    "command": "Don't post someone's personal information without permission."
+  },
+  "behave": {
+    "name": "Behave",
+    "command": "Listen to what Staff says."
+  },
+  "nsfw": {
+    "name": "NSFW",
+    "command": "No adult (18+), explicit, or controversal messages. Do not post graphic pictures of minors (<18yo)."
+  },
+  "hate": {
+    "name": "Hate Redirect",
+    "command": "No racist or degrading content (racial terms are not allowed)."
+  },
+  "advertising": {
+    "name": "No Advertising",
+    "command": "No advertising other sites/discord servers (Permission must be requested from Staff)."
+  },
+  "links": {
+    "name": "Links",
+    "command": "No referral links."
+  },
+  "helpSpam": {
+    "name": "Help Spam",
+    "command": "No begging or repeatedly asking for help in the chat, please keep question in the #help-support channel"
+  },
+  "macro": {
+    "name": "Macro/Hacks",
+    "command": "Do not use macros, hacks, etc with the bot."
+  },
+  "largeText": {
+    "name": "Large Content Sharing",
+    "command": "No text walls or a large paragraphs of text. Make a thread on the forum or use Pastebin/Pastie to post a large block of text."
+  },
+  "offensiveNames": {
+    "name": "Offensive Names",
+    "command": "No offensive names"
+  },
+  "outsideBots": {
+    "name": "Outside Bots",
+    "command": "Inviting unofficial bots is NOT ALLOWED without administrative aproval, any bots that are found will be INSTANTLY BANNED without warning."
+  },
+  "removerole": {
+    "name": "removerole",
+    "command": "removes role from user r!removerole @[user] [role name]"
+  },
+  "report": {
+    "name": "report",
+    "command": "reports a user r!report @[user] [reason]"
+  },
+  "resetRank": {
+    "name": "resetRank",
+    "command": "resets a users XP, level and message count r!resetRank @[user]"
+  },
+  "restoreRank": {
+    "name": "restoreRank",
+    "command": "restore a users XP, level and message count r!restore @[user] [file]"
+  },
+  "say": {
+    "name": "say",
+    "command": "have Rikard speak r!say [saing]"
+  },
+  "serverinfo": {
+    "name": "serverinfo",
+    "command": "provide information about the server"
+  },
+  "setRank": {
+    "name": "setRank",
+    "command": "sets rank with 3 numers r!setRank @[user] [XP] [Lvl] [Message Count]"
+  },
+  "stop": {
+    "name": "stop",
+    "command": "stop the current playing music."
+  },
+  "takeXp": {
+    "name": "takeXp",
+    "command": "subtracts XP from a user r!takeXp @[user] [XP]"
+  },
+  "tempmute": {
+    "name": "tempmute",
+    "command": "temporarily restrict a user from typing r!tempmute @[user] [1s/m/h/d]"
+  }
+}

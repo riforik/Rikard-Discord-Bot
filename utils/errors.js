@@ -5,7 +5,7 @@ let config = require("../botconfig.json");
 module.exports.noPerms = (message, perm) => {
   let embed = new Discord.RichEmbed()
     .setAuthor(message.author.username)
-    .setTitle("Missing Permission")
+    .setTitle("Insufficient Permission")
     .setColor(config.red)
     .addField("Permission needed", perm);
 
@@ -54,6 +54,22 @@ module.exports.cantfindCommand = (channel) => {
   let embed = new Discord.RichEmbed()
     .setTitle("Error")
     .setDescription("Couldn't find the command, use help.")
+    .setColor(config.red);
+
+  channel.send(embed).then(m => m.delete(5000));
+}
+module.exports.incorrectUsage = (channel) => {
+  let embed = new Discord.RichEmbed()
+    .setTitle("Error")
+    .setDescription("You are using the command incorrectly, use help.")
+    .setColor(config.red);
+
+  channel.send(embed).then(m => m.delete(5000));
+}
+module.exports.musicNoChannel = (channel) => {
+  let embed = new Discord.RichEmbed()
+    .setTitle("Error")
+    .setDescription("You must be in a voice channel to use music commands.")
     .setColor(config.red);
 
   channel.send(embed).then(m => m.delete(5000));

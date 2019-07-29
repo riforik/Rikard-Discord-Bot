@@ -3,10 +3,12 @@ const errors = require("../utils/errors.js");
 let config = require("../botconfig.json");
 let helpFile = require("../utils/help.json");
 
-module.exports.run = async (bot, message, args) => {
-  message.delete();
+module.exports.run = async (bot, message, args, zoolean) => {
+  // message.delete();
+  if (!zoolean) return errors.noPerms(message, "SEND_MESSAGES");
+
   //!addrole @andrew Dog Person
-  if (!message.member.hasPermission("MANAGE_ROLES")) return errors.noPerms(message, "MANAGE_ROLES");
+  if (!message.member.hasPermission("SEND_MESSAGES")) return errors.noPerms(message, "SEND_MESSAGES");
   if (args[0] == "help") {
     message.reply(`${helpFile.addrole.name} ${helpFile.addrole.command}`);
     return;
@@ -42,5 +44,5 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-  name: "addrole"
+  name: "roleReward"
 }

@@ -22,29 +22,13 @@ module.exports.run = async (bot, message, args) => {
 
   let memCountB = Array.from(memCountG.values());
 
-
-
-  console.log("------------------  D A T A  -------------------");
-  console.log(`Server: ${message.guild.name}`);
-
-  console.log(`---------------------\nMembersG:`);
-
   for (var i = 0; i < memCountB.length; i++) {
     if (memCountB[i].user.bot) {
       botCount++;
     }
-
   }
-  console.log(memCountB.length);
-
-  console.log(`User Array: ${memCountB}`);
-
-
-  console.log("------------------------------------------------\n\n");
-
 
   try {
-
     await message.reply(`There are ${memCount} members in ${message.guild.name} (${botCount} bots).`)
   } catch (e) {
     console.log(e.stack);

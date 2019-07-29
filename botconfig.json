@@ -1,5 +1,6 @@
 {
   "prefix": "r!",
+  "rngAmnt": 25,
   "red": "#ED2E20",
   "orange": "#ED553B",
   "limegreen": "#15F153",
@@ -8,6 +9,9 @@
   "coolblue": "#26B2FF",
   "purple": "#A745ED",
   "rankPercent": 10,
-  "rankHasPerc": "⸽⸽",
-  "rankNeedsPerc": "⠀"
+  "rankHasPerc": "⸽⸽⸽",
+  "rankNeedsPerc": "⠀",
+  "rikSupServId": "600715508697792551",
+  "rikSupIntroChID": "603666408685174795",
+  "rikSupRulesChID": "603668540591177729"
 }
