@@ -83,7 +83,7 @@ Do the same for `/token.json`, import your [Discord developer](https://discordap
 * [MS](https://www.npmjs.com/package/ms) - Used to convert milliseconds
 * [Discord.js](https://discord.js.org/#/) - Interacting with discord api
 * [Super Agent](https://www.npmjs.com/package/superagent) - Interacting with web .json data
-* [Knex](https://www.npmjs.com/package/superagent) - Multi-dialect query builder for Node.js
+* [Knex](https://www.npmjs.com/package/knex) - Multi-dialect query builder for Node.js
 * [Math-Expression-Evaluator](https://www.npmjs.com/package/superagent) - An extremely efficient evaluator for Math expression in Javascript
 * [Joi](https://www.npmjs.com/package/@hapi/joi) - Object schema description language and validator for JavaScript objects
 * [Humanize Duration](https://www.npmjs.com/package/humanize-duration) - Object schema description language and validator for JavaScript objects
