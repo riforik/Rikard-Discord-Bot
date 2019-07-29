@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 let config = require("../botconfig.json");
-let versInf = "- Improved help command functionality and appearance, now separated into command categories \n- Level cap expanded at ranksPart.json, having all the level data up to 999 \n- Rank command can now backup all server level data \n- Restore with backups from Rikard's saves to replace a users level, xp and msg count \n- Reset All command makes a backup and resets all ranks in the server \n- Restore All command creates a backup and restores ranks in the server \n- Rikard can now solve equations through chat and calculate percentages \n- Embeds in general now look better when Rikard responds \n- Rank command shows a progress bar along with percentage \n\n- Bot config includes values to change progress bar characters and length from 0-100 \n- Added command list";
-let versInf2 = "- None :(";
+let versInf = "- Knex.js added for sql security \n- Joi.js added for user input sanitation \n- Mexp.js added to evaluate math rather than the unsecure eval in vanilla JS \n- Custom schema's for commands interacting heavily based on user input \n- Inherited schema from the index file standardizing user input to string and escaping potentially harmful characters with regex replace. This alone is not a guarantee so a custom schema is build to continue verifying proper user input \n- Uptime command added \n- Ping command added \n- ConnPool now an option for connecting to a database rather than normal conn";
+let versInf2 = "- Role rewards now work\n- Rank percentage shows accurately from 0 to max \n- Multiple bug fixes from file cleanup and patch";
 
 module.exports.run = async (bot, message, args) => {
 
@@ -12,15 +12,15 @@ module.exports.run = async (bot, message, args) => {
   let bicon = bot.user.displayAvatarURL;
   let botembed = new Discord.RichEmbed()
     .setAuthor("Riforik", "https://i.imgur.com/4BF1DoJ.png", "https://github.com/riforik")
-    .setTitle("Leveling System 3.0 & Cleanup")
-    .setDescription("This update I cleaned up commented code in small, and upgraded the leveling system in large. See enhancements below and the new command list to see the major changes.")
+    .setTitle("Security Update")
+    .setDescription("Security patch means adding knex.js for escaping sql injections and preparing for database connection/interaction. The second part of the security patch includes using joi.js to validate user input, using this lets us use custom schema's to ensure specific standards are met on user input.")
     .setImage("https://i.imgur.com/4BF1DoJ.png")
     .setColor(config.red)
     .setURL("https://github.com/riforik/Rikard-Discord-Bot/releases/tag/v1.2.0")
     .setThumbnail("https://i.imgur.com/4BF1DoJ.png")
     .addField("Framework Enhancements", versInf)
     .addField("Bug Fixes", versInf2)
-    .setFooter("v1.2.0 (07/23/2019)", bicon);
+    .setFooter("v1.3.0 (07/29/2019)", bicon);
 
   return message.channel.send(botembed);
 }

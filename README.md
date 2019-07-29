@@ -19,26 +19,26 @@
 
 ### [Full command list](./commands/CommandList.md)
 
-> ## v1.2.0 (07/23/2019)
+> ## v1.3.0 (07/29/2019)
 >
 > #### Framework Enhancements:
 >
-> - Improved help command functionality and appearance, now separated into command categories
-> - Level cap expanded at [ranksPart.json](./utils/ranksPart.json), having all the level data up to **999**
-> - **Rank command can now backup all server level data**
-> - **Restore with backups** from Rikard's saves to replace a users level, xp and msg count
-> - **Reset All** command makes a backup and resets all ranks in the server
-> - **Restore All** command creates a backup and restores ranks in the server
-> - **Rikard can now solve equations** through chat and calculate **percentages**
-> - Embeds in general now look better when Rikard responds
-> - Rank command shows a progress bar along with percentage
-> - Bot config includes values to change progress bar characters and length from 0-100
-> - Added command list
+> - **Knex.js added for sql security**
+> - **Joi.js added for user input sanitation**
+> - **Mexp.js** added to evaluate math rather than the unsecure eval in vanilla JS
+> - **Custom schema's** for commands interacting heavily based on user input
+> - **Inherited schema** from the index file **standardizing user input to string and escaping potentially harmful characters** with regex replace. *This alone is not a guarantee so a custom schema is build to continue verifying proper user input*
+> - Uptime command added
+> - Ping command added
+> - Cloud commands list added
+> - Server builder info commands added
+> - Math command now uses **mexp** to ensure that equations are safely calculated and code does not slip past eval methods
+> - ConnPool now an option for connecting to a database rather than normal conn
 >
 > #### Bug Fixes:
-> - None :(
-
-
+> - Role rewards now work
+> - Rank percentage shows accurately from 0 to max
+> - Multiple bug fixes from file cleanup and patch
 
 
 ## Getting Started
@@ -76,7 +76,7 @@ this will automatically do...
 ```
 because of the package.json
 
-After installing find `/utils/conn.js` and add your live server credentials
+After installing find `/utils/conn.js` as well as `/utils/connPool.js` and add your live server credentials
 
 Do the same for `/token.json`, import your [Discord developer](https://discordapp.com/developers/applications/) bot token
 

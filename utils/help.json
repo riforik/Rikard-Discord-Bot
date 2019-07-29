@@ -43,9 +43,21 @@
     "name": "createRole",
     "command": "creates a role by specifying name, colour and perms. r!createRole [name] [hexidecimal number] [permission number]"
   },
+  "cmdList": {
+    "name": "cmdList",
+    "command": "shows the commands in a sectioned/structured manor"
+  },
+  "customCmds": {
+    "name": "customCmds",
+    "command": "show the custom server related commands stored in a database"
+  },
   "doggo": {
     "name": "doggo",
     "command": "brighten up day"
+  },
+  "introduction": {
+    "name": "introduction",
+    "command": "shows the welcome message to your server's info (Rikard Support Server by default)"
   },
   "kick": {
     "name": "kick",
@@ -62,6 +74,10 @@
   "nickname": {
     "name": "nickname",
     "command": "change nicknames by r!nickname [user] [desired nickname]"
+  },
+  "ping": {
+    "name": "ping",
+    "command": "recieve pong! (x)ms"
   },
   "play": {
     "name": "play",
@@ -87,6 +103,10 @@
     "name": "restoreRank",
     "command": "restore a users XP, level and message count r!restore @[user] [file]"
   },
+  "rules": {
+    "name": "rules",
+    "command": "display a set of rules that users must follow on your server"
+  },
   "say": {
     "name": "say",
     "command": "have Rikard speak r!say [saing]"
@@ -110,5 +130,13 @@
   "tempmute": {
     "name": "tempmute",
     "command": "temporarily restrict a user from typing r!tempmute @[user] [1s/m/h/d]"
+  },
+  "updates": {
+    "name": "updates",
+    "command": "Recent updates from your server (Rikard Bot development as default)"
+  },
+  "uptime": {
+    "name": "uptime",
+    "command": "the duration of time Rikard has been online for"
   }
 }

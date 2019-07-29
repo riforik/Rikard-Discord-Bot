@@ -19,24 +19,26 @@
 
 ### [Back to ReadMe](../README.md)
 
-> ## v1.2.0 (07/23/2019)
+> ## v1.3.0 (07/29/2019)
 >
 > #### Framework Enhancements:
 >
-> - Improved help command functionality and appearance, now separated into command categories
-> - Level cap expanded at [ranksPart.json](./utils/ranksPart.json), having all the level data up to **999**
-> - **Rank command can now backup all server level data**
-> - **Restore with backups** from Rikard's saves to replace a users level, xp and msg count
-> - **Reset All** command makes a backup and resets all ranks in the server
-> - **Restore All** command creates a backup and restores ranks in the server
-> - **Rikard can now solve equations** through chat and calculate **percentages**
-> - Embeds in general now look better when Rikard responds
-> - Rank command shows a progress bar along with percentage
-> - Bot config includes values to change progress bar characters and length from 0-100
-> - Added command list
+> - **Knex.js added for sql security**
+> - **Joi.js added for user input sanitation**
+> - **Mexp.js** added to evaluate math rather than the unsecure eval in vanilla JS
+> - **Custom schema's** for commands interacting heavily based on user input
+> - **Inherited schema** from the index file **standardizing user input to string and escaping potentially harmful characters** with regex replace. *This alone is not a guarantee so a custom schema is built to continue verifying proper user input*
+> - Uptime command added
+> - Ping command added
+> - Cloud commands list added
+> - Server builder info commands added (rules, cmdList, introduction, updates)
+> - Math command now uses **mexp** to ensure that equations are safely calculated and code does not slip past eval methods
+> - ConnPool now an option for connecting to a database rather than normal conn
 >
 > #### Bug Fixes:
-> - None :(
+> - Role rewards now work
+> - Rank percentage shows accurately from 0 to max
+> - Multiple bug fixes from file cleanup and patch
 
 
 ## Command List
@@ -73,11 +75,17 @@
 
 [**r!avatar**](./avatar.js) shows you your avatar
 
+[**r!customCmds**](./customCmds.js) show the custom server related commands stored in a database
+
 [**r!help**](./help.js) return information about commands Rikard has
 
 [**r!memberCount**](./memberCount.js) displays server user count r!memberCount
 
 [**r!serverinfo**](./serverinfo.js) provide information about the server
+
+[**r!ping**](./ping.js) recieve pong! (x)ms
+
+[**r!uptime**](./serverinfo.js) the duration of time Rikard has been online for
 
 
 ---
@@ -101,6 +109,8 @@
 
 ---
 ### Level System
+[**r!addXp**](./addXp.js) gives XP to a user r!addXp @[user] [XP]
+
 [**r!rank**](./rank.js) shows your level, another users level or level stats. r!rank @[user] or [level]. Backup your servers ranks with r!rank b
 
 [**r!resetRank**](./resetRank.js) resets a users XP, level and message count r!resetRank @[user]
@@ -109,13 +119,21 @@
 
 [**r!setRank**](./setRank.js) sets rank with 3 numers r!setRank @[user] [XP] [Lvl] [Message Count]
 
-[**r!addXp**](./addXp.js) gives XP to a user r!addXp @[user] [XP]
-
 [**r!takeXp**](./takeXp.js) subtracts XP from a user r!takeXp @[user] [XP]
 
 
 ---
+### Management
+[**r!cmdList**](./cmdList.js) shows the commands in a sectioned/structured manor
 
+[**r!introduction**](./introduction.js) shows the welcome message to your server's info (Rikard Support Server by default)
+
+[**r!rules**](./rules.js) display a set of rules that users must follow on your server
+
+[**r!updates**](./updates.js) Recent updates from your server (Rikard Bot development as default)
+
+
+---
 
 
 ## Authors

@@ -41,6 +41,12 @@ let lvlSytmCont = `
 **${config.prefix}${helpFile.addXp.name}** ${helpFile.addXp.command}\r
 **${config.prefix}${helpFile.takeXp.name}** ${helpFile.takeXp.command}\n`;
 
+let management = `
+**${config.prefix}${helpFile.cmdList.name}** ${helpFile.cmdList.command}\r
+**${config.prefix}${helpFile.introduction.name}** ${helpFile.introduction.command}\r
+**${config.prefix}${helpFile.rules.name}** ${helpFile.rules.command}\r
+**${config.prefix}${helpFile.updates.name}** ${helpFile.updates.command}\r`;
+
 module.exports.run = async (bot, message, args) => {
   message.delete();
   if (!message.member.hasPermission("MANAGE_GUILD")) return errors.noPerms(message, "MANAGE_GUILD");
@@ -56,6 +62,7 @@ module.exports.run = async (bot, message, args) => {
     .addField(":joy: Fun", funCont)
     .addField(":straight_ruler: Math", mathCont)
     .addField(":chart_with_upwards_trend: Level System", lvlSytmCont)
+    .addField(":control_knobs: Management", management)
     .setFooter("End of commands", bot.user.displayAvatarURL);
 
 
