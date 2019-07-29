@@ -55,8 +55,14 @@ Follow these steps to get your own version of the bot up and running.
 What will you need to install the bot
 
 [Node.js](https://nodejs.org/en/)
+[Rikard Discord Bot](https://github.com/riforik/Rikard-Discord-Bot/releases/tag/v1.2.0)
 
 ### Installing
+Move the Rikard Discord Bot folder to the directory you choose and open that location in a command line/terminal window...
+
+```shell
+> cd /Rikard-Discord-Bot/
+```
 
 A step by step series of examples that tell you how to get a development env running
 
@@ -65,16 +71,7 @@ After installing [node.js](https://nodejs.org/en/) enter the following into your
 ```shell
 > npm i
 ```
-this will automatically do...
-
-```shell
-> npm install discord.js -s
-
-> npm install superagent -s
-
-> npm install ms
-```
-because of the package.json
+this will automatically do install the dependencies and packages the bot needs to run because of the package.json
 
 After installing find `/utils/conn.js` as well as `/utils/connPool.js` and add your live server credentials
 
@@ -86,17 +83,25 @@ Do the same for `/token.json`, import your [Discord developer](https://discordap
 * [MS](https://www.npmjs.com/package/ms) - Used to convert milliseconds
 * [Discord.js](https://discord.js.org/#/) - Interacting with discord api
 * [Super Agent](https://www.npmjs.com/package/superagent) - Interacting with web .json data
+* [Knex](https://www.npmjs.com/package/superagent) - Multi-dialect query builder for Node.js
+* [Math-Expression-Evaluator](https://www.npmjs.com/package/superagent) - An extremely efficient evaluator for Math expression in Javascript
+* [Joi](https://www.npmjs.com/package/@hapi/joi) - Object schema description language and validator for JavaScript objects
+* [Humanize Duration](https://www.npmjs.com/package/humanize-duration) - Object schema description language and validator for JavaScript objects
+
+*Others included bot not mentioned...*
+
+
+
 
 
 ## Connecting to your database
 Your `conn.js` file should link to your hosted servers but you still have no database structure.
 
-1. In `conn.js`, `database: 'your_database_here'` is where you want to enter your mySQL database name
-2. Create tables in your database with [these values](https://github.com/riforik/Rikard-Discord-Bot/tree/production/utils/db.sql), just import the file into your database the structure is set
+1. In `conn.js` and `connPool.js`, `database: 'your_database_here'` is where you want to enter your mySQL database name
+2. Create tables in your database with [these values](https://github.com/riforik/Rikard-Discord-Bot/tree/production/utils/db.sql), just import the file into your database and the structure is set
 
-The tables should not be able to be filled with data from reports or custom commands
 
-#### !!beware of **sql injections**, my prepared statements aren't a guarantee so data leaking will occur at your own risk when setting up your own bot!!
+#### !!beware of **sql injections**, the security patch sanitizes user input however trusting/using user input is done at your own discretion!!
 
 
 ## Starting the Bot
