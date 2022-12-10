@@ -20,7 +20,7 @@
   "dependencies": {
     "@hapi/joi": "^15.1.0",
     "discord.js": "^11.4.2",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "ffmpeg": "0.0.4",
     "humanize-duration": "^3.20.0",
     "jquery": "^3.4.1",
